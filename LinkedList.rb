@@ -35,5 +35,12 @@ class LinkedList
     @length -= 1
   end
 
+  def insert_at(index, value)
+    new_node = Node.new(value)
+    old_node = getIndex(index - 1)
+    new_node.set_next_node(old_node.get_next)
+    old_node.set_next_node(new_node)
+    @length += 1
+  end
 
 end

@@ -49,5 +49,17 @@ class TestLinkedList < MiniTest::Test
     assert_equal(nil, @list.getIndex(2))
   end    
 
+  def test_insertElementAtIndexIncreasesLength
+    @list.add("Yaldy!")
+    @list.insert_at(1, "Chips!")
+    assert_equal(3, @list.length)
+  end
 
+  def test_insertElementAtIndexIncreasesLength
+    @list.add("Yaldy!")
+    @list.insert_at(1, "Chips!")
+    assert_equal("Yaldy!", @list.getIndex(0).value)
+    assert_equal("Chips!", @list.getIndex(1).value)
+    assert_equal("Hello there!", @list.getIndex(2).value)
+  end
 end
