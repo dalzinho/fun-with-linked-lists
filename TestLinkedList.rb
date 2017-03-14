@@ -62,4 +62,21 @@ class TestLinkedList < MiniTest::Test
     assert_equal("Chips!", @list.getIndex(1).value)
     assert_equal("Hello there!", @list.getIndex(2).value)
   end
+
+  def test_canCountArrayItems
+    
+    9.times do
+      @list.add(rand(0..100))
+    end
+
+    assert_equal(10, @list.count)
+  end
+
+  def test_counterMatchesLengthInstanceVariable
+    99.times do
+      @list.add(rand(0..10_000))
+    end
+    assert_equal(@list.count, @list.length)
+  end
+
 end
