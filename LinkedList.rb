@@ -29,5 +29,11 @@ class LinkedList
     return requested_node   
   end
 
+  def delete_at(index)
+    element_to_delete = getIndex(index)
+    getIndex(index - 1).set_next_node(element_to_delete.get_next)
+    @length -= 1
+  end
+
 
 end
